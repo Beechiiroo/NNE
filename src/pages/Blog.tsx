@@ -6,8 +6,10 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Blog = () => {
+  const [selectedCategory, setSelectedCategory] = useState("Tous");
   const articles = [
     {
       title: "Introduction aux Réseaux Neuronaux Convolutifs (CNN)",
@@ -61,6 +63,10 @@ const Blog = () => {
 
   const categories = ["Tous", "Deep Learning", "NLP", "Tutorial", "MLOps", "Generative AI"];
 
+  const filteredArticles = selectedCategory === "Tous" 
+    ? articles 
+    : articles.filter(article => article.category === selectedCategory);
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -95,8 +101,9 @@ const Blog = () => {
             {categories.map((category, index) => (
               <Button
                 key={index}
-                variant={index === 0 ? "default" : "outline"}
+                variant={selectedCategory === category ? "default" : "outline"}
                 className="rounded-full"
+                onClick={() => setSelectedCategory(category)}
               >
                 {category}
               </Button>
@@ -107,7 +114,7 @@ const Blog = () => {
         {/* Articles Grid */}
         <section className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {articles.map((article, index) => (
+            {filteredArticles.map((article, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}

@@ -88,6 +88,11 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground antialiased;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%238b5cf6' stroke-width='2'%3E%3Cpath d='M12 2a8 8 0 0 1 8 8v4a8 8 0 0 1-16 0v-4a8 8 0 0 1 8-8z'/%3E%3Cpath d='M12 6v6'/%3E%3Cpath d='M8 10h8'/%3E%3C/svg%3E") 12 12, auto;
+  }
+  
+  a, button {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%238b5cf6' stroke='%238b5cf6' stroke-width='2'%3E%3Cpath d='M12 2a8 8 0 0 1 8 8v4a8 8 0 0 1-16 0v-4a8 8 0 0 1 8-8z'/%3E%3Cpath d='M12 6v6'/%3E%3Cpath d='M8 10h8'/%3E%3C/svg%3E") 12 12, pointer;
   }
   
   html {

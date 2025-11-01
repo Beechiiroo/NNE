@@ -1,23 +1,36 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Brain } from "lucide-react";
+import { Menu, X, Brain, LogOut, LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { LanguageToggle } from "@/components/LanguageToggle";
+import { QRScanner } from "@/components/QRScanner";
+import { useAuth } from "@/contexts/AuthContext";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { toast } from "sonner";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { user, signOut } = useAuth();
+  const { t } = useLanguage();
 
   const navItems = [
-    { name: "Accueil", path: "/" },
-    { name: "À propos", path: "/about" },
-    { name: "Compétences", path: "/skills" },
-    { name: "Formation", path: "/education" },
-    { name: "Salaire", path: "/salary" },
-    { name: "Projets", path: "/projects" },
-    { name: "Blog", path: "/blog" },
-    { name: "Contact", path: "/contact" },
+    { name: t("home"), path: "/" },
+    { name: t("about"), path: "/about" },
+    { name: t("skills"), path: "/skills" },
+    { name: t("education"), path: "/education" },
+    { name: t("salary"), path: "/salary" },
+    { name: t("projects"), path: "/projects" },
+    { name: t("blog"), path: "/blog" },
+    { name: t("contact"), path: "/contact" },
   ];
+
+  const handleLogout = async () => {
+    await signOut();
+    toast.success("Déconnexion réussie");
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
@@ -49,6 +62,20 @@ const Header = () => {
                 </Button>
               </Link>
             ))}
+            <ThemeToggle />
+            <LanguageToggle />
+            <QRScanner />
+            {user ? (
+              <Button variant="ghost" size="icon" onClick={handleLogout}>
+                <LogOut className="h-5 w-5" />
+              </Button>
+            ) : (
+              <Link to="/auth">
+                <Button variant="ghost" size="icon">
+                  <LogIn className="h-5 w-5" />
+                </Button>
+              </Link>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
