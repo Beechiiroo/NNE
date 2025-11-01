@@ -1,73 +1,89 @@
-# Welcome to your Lovable project
+🚀 Neural Network Engineer Platform
 
-## Project info
+A Futuristic Web Portal to Elevate the Next-Gen AI Career
 
-**URL**: https://lovable.dev/projects/692a3a7c-1c2d-43ef-b3c2-070e7ec609f6
+🎨 Design cyberpunk, animations IA, multilingue, dark mode, QR scanner & secure access
+🌐 Built with React + Lovable Cloud (PostgreSQL, Auth, Serverless)
 
-## How can I edit this code?
+✨ Aperçu du projet
 
-There are several ways of editing your application.
+Cette plateforme moderne valorise le métier d’Ingénieur Réseaux de Neurones à travers :
+✅ Une expérience immersive futuriste (bleu électrique + violet néon)
+✅ Un réseau neuronal animé en Hero Section
+✅ Navigation fluide et responsive mobile-first
+✅ Blog et projets avec filtrage dynamique
+✅ Authentification sécurisée + 2FA (facteur d’authentification)
+✅ Multilingue FR/EN avec switch en UI
+✅ Mode sombre / clair
+✅ Curseur personnalisé → logo du site
+✅ Section "Développé par Beechir Chaieb" (infos personnelles + GitHub)
+✅ Localisation rendue à Sfax, Tunisia
+✅ Formulaire de contact & scanner QR intégré
 
-**Use Lovable**
+🏗️ Stack Technique
+Technologie	Rôle
+React + Vite	Interface utilisateur moderne & rapide
+Lovable Cloud	Backend serverless, PostgreSQL, Auth
+TailwindCSS	Design system futuriste
+Framer Motion	Animations fluides
+i18next	Internationalisation (FR/EN)
+React Router	Navigation
+Custom Canvas + Three.js	Effet réseau neuronal
+📂 Structure du projet
+📦 neural-network-engineer-platform/
+ ├─ src/
+ │   ├─ components/
+ │   ├─ pages/
+ │   │   ├─ Home.jsx
+ │   │   ├─ About.jsx
+ │   │   ├─ Skills.jsx
+ │   │   ├─ Career.jsx
+ │   │   ├─ Salary.jsx
+ │   │   ├─ Projects.jsx
+ │   │   ├─ Blog.jsx
+ │   │   ├─ Contact.jsx
+ │   ├─ hooks/
+ │   ├─ i18n/
+ │   ├─ styles/
+ │   ├─ auth/
+ │   ├─ App.jsx
+ │   └─ main.jsx
+ ├─ public/
+ └─ README.md
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/692a3a7c-1c2d-43ef-b3c2-070e7ec609f6) and start prompting.
+✅ Fonctionnalités
+Fonction	Statut
+Hero neuronal animé	✅
+Dark/Light Mode	✅
+Multilingue FR/EN	✅
+Auth lovcloud (JWT + 2FA)	✅
+Filtrage intelligent du Blog	✅
+Portfolio dynamique	✅
+Contact + Email	✅
+QR Code Scanner	✅
+Custom Cursor	✅
+Responsive & SEO-ready	✅
+🔐 Authentification Lovable Cloud
 
-Changes made via Lovable will be committed automatically to this repo.
+⚠️ À configurer après le déploiement :
+→ Dans Cloud → Authentication → Redirect URLs
+Ajouter :
 
-**Use your preferred IDE**
+http://localhost:5173
+https://ton-domaine.com
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+🚀 Installation & Démarrage
+git clone https://github.com/Beechiiroo/neural-network-engineer-platform.git
+cd neural-network-engineer-platform
+npm install
 npm run dev
-```
 
-**Edit a file directly in GitHub**
+📬 Contact & Credits
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+👨‍💻 Développé par Beechir Chaieb
+📍 Sfax — Tunisia
+🌐 GitHub : https://github.com/Beechiiroo
 
-**Use GitHub Codespaces**
+📧 Email : chaiebb37@gmail.com
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/692a3a7c-1c2d-43ef-b3c2-070e7ec609f6) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+✨ Objectif : Inspirer les futurs experts en réseaux neuronaux ✨
