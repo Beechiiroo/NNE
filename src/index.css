@@ -88,11 +88,11 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground antialiased;
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%238b5cf6' stroke-width='2'%3E%3Cpath d='M12 2a8 8 0 0 1 8 8v4a8 8 0 0 1-16 0v-4a8 8 0 0 1 8-8z'/%3E%3Cpath d='M12 6v6'/%3E%3Cpath d='M8 10h8'/%3E%3C/svg%3E") 12 12, auto;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%238b5cf6' stroke-width='2'%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3Cpath d='M12 3a9 9 0 0 1 9 9'/%3E%3Cpath d='M3 12a9 9 0 0 1 9-9'/%3E%3Cpath d='M12 21a9 9 0 0 1-9-9'/%3E%3Cpath d='M21 12a9 9 0 0 1-9 9'/%3E%3C/svg%3E") 10 10, auto;
   }
   
-  a, button {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%238b5cf6' stroke='%238b5cf6' stroke-width='2'%3E%3Cpath d='M12 2a8 8 0 0 1 8 8v4a8 8 0 0 1-16 0v-4a8 8 0 0 1 8-8z'/%3E%3Cpath d='M12 6v6'/%3E%3Cpath d='M8 10h8'/%3E%3C/svg%3E") 12 12, pointer;
+  a, button, [role="button"], input[type="submit"] {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%238b5cf6' stroke-width='2.5'%3E%3Ccircle cx='12' cy='12' r='4' fill='%238b5cf6'/%3E%3Cpath d='M12 2v4M12 18v4M22 12h-4M6 12H2'/%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3C/svg%3E") 12 12, pointer;
   }
   
   html {
@@ -137,5 +137,34 @@ All colors MUST be HSL.
     50% {
       box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
     }
+  }
+  
+  /* Glassmorphism effects */
+  .glass-effect {
+    background: hsl(var(--card) / 0.5);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+  
+  /* Neon glow animation */
+  @keyframes neon-pulse {
+    0%, 100% {
+      filter: drop-shadow(0 0 5px hsl(var(--primary))) 
+              drop-shadow(0 0 10px hsl(var(--primary) / 0.5));
+    }
+    50% {
+      filter: drop-shadow(0 0 10px hsl(var(--primary))) 
+              drop-shadow(0 0 20px hsl(var(--primary) / 0.8));
+    }
+  }
+  
+  .neon-glow {
+    animation: neon-pulse 2s ease-in-out infinite;
+  }
+  
+  /* Parallax scroll effect */
+  .parallax {
+    transform: translateZ(0);
+    will-change: transform;
   }
 }

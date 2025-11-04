@@ -149,6 +149,38 @@ const About = () => {
           </div>
         </section>
 
+        {/* Video Section */}
+        <section className="container mx-auto px-4 mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="max-w-5xl mx-auto"
+          >
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold mb-4 text-gradient">
+                Découvrez le métier en vidéo
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Une immersion complète dans le quotidien d'un Neural Network Engineer
+              </p>
+            </div>
+            
+            <Card className="p-2 bg-card/50 backdrop-blur-sm border-border overflow-hidden">
+              <div className="relative aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20">
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src="https://www.youtube.com/embed/aircAruvnKk"
+                  title="Neural Networks Explained"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </Card>
+          </motion.div>
+        </section>
+
         {/* Future Section */}
         <section className="container mx-auto px-4">
           <motion.div

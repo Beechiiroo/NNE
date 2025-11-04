@@ -168,6 +168,39 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Stats Section */}
+      <section className="py-20 relative">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {[
+              { number: "300%", label: "Croissance du métier", delay: 0 },
+              { number: "150K€", label: "Salaire moyen", delay: 0.1 },
+              { number: "50K+", label: "Postes disponibles", delay: 0.2 },
+            ].map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: stat.delay, duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <Card className="p-6 text-center bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 card-glow">
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ delay: stat.delay + 0.2, duration: 0.5, type: "spring" }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="text-4xl font-bold text-gradient mb-2">{stat.number}</div>
+                    <div className="text-muted-foreground">{stat.label}</div>
+                  </motion.div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
@@ -185,12 +218,20 @@ const Index = () => {
             <p className="text-lg text-muted-foreground mb-8">
               Découvrez toutes les facettes du métier de Neural Network Engineer, des compétences requises aux opportunités de carrière.
             </p>
-            <Link to="/about">
-              <Button size="lg" className="group">
-                Commencer l'exploration
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/about">
+                <Button size="lg" className="group">
+                  Commencer l'exploration
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+              <Link to="/auth">
+                <Button size="lg" variant="outline" className="group">
+                  Se connecter
+                  <Sparkles className="ml-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
+                </Button>
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
