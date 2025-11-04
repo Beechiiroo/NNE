@@ -65,7 +65,7 @@ const Auth = () => {
           }
         } else {
           toast.success("Connexion réussie!");
-          navigate("/");
+          navigate("/", { replace: true });
         }
       } else {
         const { error } = await signUp(email, password);
@@ -76,8 +76,14 @@ const Auth = () => {
             toast.error("Erreur lors de l'inscription");
           }
         } else {
-          toast.success("Inscription réussie! Vous pouvez maintenant vous connecter.");
-          setIsLogin(true);
+          toast.success("Inscription réussie! Connexion automatique...");
+          // Auto-login after successful signup
+          const { error: signInError } = await signIn(email, password);
+          if (!signInError) {
+            navigate("/", { replace: true });
+          } else {
+            setIsLogin(true);
+          }
         }
       }
     } catch (error) {

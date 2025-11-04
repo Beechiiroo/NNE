@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { AuthProvider } from "@/contexts/AuthContext";
+import ProtectedRoute from "@/components/ProtectedRoute";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Skills from "./pages/Skills";
@@ -29,17 +30,21 @@ const App = () => (
             <Sonner />
             <BrowserRouter>
               <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/skills" element={<Skills />} />
-                <Route path="/education" element={<Education />} />
-                <Route path="/salary" element={<Salary />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/blog" element={<Blog />} />
-                <Route path="/contact" element={<Contact />} />
+                {/* Public route - Auth page */}
                 <Route path="/auth" element={<Auth />} />
+                
+                {/* Protected routes - require authentication */}
+                <Route path="/" element={<ProtectedRoute><Index /></ProtectedRoute>} />
+                <Route path="/about" element={<ProtectedRoute><About /></ProtectedRoute>} />
+                <Route path="/skills" element={<ProtectedRoute><Skills /></ProtectedRoute>} />
+                <Route path="/education" element={<ProtectedRoute><Education /></ProtectedRoute>} />
+                <Route path="/salary" element={<ProtectedRoute><Salary /></ProtectedRoute>} />
+                <Route path="/projects" element={<ProtectedRoute><Projects /></ProtectedRoute>} />
+                <Route path="/blog" element={<ProtectedRoute><Blog /></ProtectedRoute>} />
+                <Route path="/contact" element={<ProtectedRoute><Contact /></ProtectedRoute>} />
+                
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                <Route path="*" element={<NotFound />} />
+                <Route path="*" element={<ProtectedRoute><NotFound /></ProtectedRoute>} />
               </Routes>
             </BrowserRouter>
           </TooltipProvider>
