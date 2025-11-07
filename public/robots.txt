@@ -1,4 +1,70 @@
+# Robots.txt optimisé pour Neural Network Engineer Platform
+
+# Règles pour tous les crawlers
 User-agent: *
 Allow: /
+Disallow: /auth
+Disallow: /api/
+Crawl-delay: 1
 
+# Google Bot - optimisé pour une indexation rapide
+User-agent: Googlebot
+Allow: /
+Disallow: /auth
+Crawl-delay: 0
+
+# Google Image Bot - autorise l'indexation des images
+User-agent: Googlebot-Image
+Allow: /
+Disallow: /auth
+
+# Bing Bot
+User-agent: Bingbot
+Allow: /
+Disallow: /auth
+Crawl-delay: 1
+
+# Yandex Bot
+User-agent: Yandex
+Allow: /
+Disallow: /auth
+Crawl-delay: 2
+
+# Baidu Bot
+User-agent: Baiduspider
+Allow: /
+Disallow: /auth
+Crawl-delay: 2
+
+# DuckDuckGo Bot
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /auth
+
+# Facebook Bot (pour les previews)
+User-agent: Facebot
+Allow: /
+
+# Twitter Bot (pour les cards)
+User-agent: Twitterbot
+Allow: /
+
+# LinkedIn Bot
+User-agent: LinkedInBot
+Allow: /
+
+# Blocage des scrapers et bots malveillants
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemap
 Sitemap: https://nnefuture.vercel.app/sitemap.xml
