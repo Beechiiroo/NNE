@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
-import { DollarSign, TrendingUp, MapPin, Briefcase } from "lucide-react";
+import { DollarSign, TrendingUp, MapPin, Briefcase, Sparkles } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SalaryCalculator from "@/components/SalaryCalculator";
+import SalaryComparison from "@/components/SalaryComparison";
+import CityComparator from "@/components/CityComparator";
 
 const Salary = () => {
   const salaryRanges = [
@@ -72,14 +75,58 @@ const Salary = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <DollarSign className="h-20 w-20 text-primary mx-auto mb-6 animate-float" />
+            <div className="relative inline-block mb-6">
+              <DollarSign className="h-20 w-20 text-primary mx-auto animate-float relative z-10" />
+              <Sparkles className="h-8 w-8 text-secondary absolute -top-2 -right-2 animate-pulse" />
+            </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-gradient">Salaire & Marché</span>
+              <span className="text-gradient">Calculateur de Salaire IA</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Un des métiers les mieux rémunérés dans la tech, avec une demande croissante
+              Découvrez votre potentiel salarial avec notre outil interactif personnalisé
             </p>
           </motion.div>
+        </section>
+
+        {/* Interactive Calculator */}
+        <section className="container mx-auto px-4 mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <SalaryCalculator />
+          </motion.div>
+        </section>
+
+        {/* Comparison Chart */}
+        <section className="container mx-auto px-4 mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <SalaryComparison />
+          </motion.div>
+        </section>
+
+        {/* City Comparator */}
+        <section className="container mx-auto px-4 mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold mb-4">Comparateur de Villes</h2>
+            <p className="text-lg text-muted-foreground">
+              Comparez jusqu'à 3 villes pour trouver votre destination idéale
+            </p>
+          </motion.div>
+          <CityComparator />
         </section>
 
         {/* Salary Ranges */}
