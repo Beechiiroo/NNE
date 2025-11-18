@@ -6,6 +6,11 @@ import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import NeuralNetwork from "@/components/NeuralNetwork";
+import { InteractiveTerminal } from "@/components/InteractiveTerminal";
+import { StatsCounter } from "@/components/StatsCounter";
+import { SkillsOrbit } from "@/components/SkillsOrbit";
+import { FloatingParticles } from "@/components/FloatingParticles";
+import { AchievementBadges } from "@/components/AchievementBadges";
 import heroImage from "@/assets/hero-neural.jpg";
 
 const Index = () => {
@@ -52,6 +57,9 @@ const Index = () => {
         <div className="absolute inset-0 z-10 opacity-30">
           <NeuralNetwork />
         </div>
+        
+        {/* Floating Particles */}
+        <FloatingParticles count={30} />
 
         {/* Content */}
         <div className="container mx-auto px-4 relative z-20">
