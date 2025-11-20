@@ -11,6 +11,7 @@ import { StatsCounter } from "@/components/StatsCounter";
 import { SkillsOrbit } from "@/components/SkillsOrbit";
 import { FloatingParticles } from "@/components/FloatingParticles";
 import { AchievementBadges } from "@/components/AchievementBadges";
+import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 import heroImage from "@/assets/hero-neural.jpg";
 
 const Index = () => {
@@ -208,6 +209,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <TestimonialsCarousel />
 
       {/* CTA Section */}
       <section className="py-20 relative">
